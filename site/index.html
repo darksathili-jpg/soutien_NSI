@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr" data-theme="clair">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Les 48 sujets de l’épreuve pratique de Numérique et sciences informatiques 2025. Entraînement et simulation avec un éditeur Python intégré.">
+  <meta name="theme-color" content="#0b1c2d">
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <title>Atelier NSI · Épreuve pratique 2025</title>
+</head>
+<body>
+  <a href="#workspace" class="skip">Aller à l’espace de travail</a>
+  <header class="top">
+    <div class="wide nav">
+      <a class="brand" href="./" aria-label="Accueil Atelier NSI"><span aria-hidden="true" class="brandmark"><i></i><i></i><i></i><i></i></span>Atelier<span>NSI</span></a>
+      <div class="nav-actions">
+        <label class="theme-label" for="theme">Affichage</label>
+        <select id="theme" aria-label="Thème d’affichage"><option value="clair">Clair</option><option value="sombre">Sombre</option><option value="projecteur">Vidéoprojecteur</option></select>
+        <button id="help" class="quiet">Aide</button>
+      </div>
+    </div>
+  </header>
+  <main class="wide main">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-caption">
+        <p class="eyebrow"><span></span> TERMINALE · NUMÉRIQUE ET SCIENCES INFORMATIQUES</p>
+        <h1 id="title">Épreuve pratique <em>2025</em></h1>
+        <p>Choisissez un sujet, programmez en Python et vérifiez vos solutions.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span></span><span></span><span></span><span></span><b>&gt;_</b></div>
+      <div class="hero-stats" aria-label="48 sujets, 96 exercices">
+        <div><strong>48</strong><span>Sujets</span></div>
+        <div><strong>96</strong><span>Exercices</span></div>
+      </div>
+    </section>
+    <div id="boot-error" role="alert" hidden></div>
+    <div class="layout" id="workspace" tabindex="-1">
+      <aside class="catalog panel" aria-labelledby="catalog-title">
+        <div class="catalog-head"><h2 id="catalog-title">Les sujets</h2><button id="random" class="quiet compact" title="Tirer un sujet dans la liste affichée">Tirer au sort</button></div>
+        <label class="search-wrap"><span class="glass" aria-hidden="true"></span><input id="search" type="search" placeholder="Numéro ou notion" aria-label="Rechercher un sujet"></label>
+        <label class="filter-wrap"><select id="theme-filter" aria-label="Filtrer par notion"><option value="">Toutes les notions</option></select></label>
+        <div id="subject-grid" class="subject-grid" aria-label="Choix du sujet"></div>
+        <p id="no-subjects" class="muted" hidden>Aucun sujet trouvé.</p>
+        <div class="catalog-foot">
+          <div class="progress-label"><span>Exercices vérifiés</span><strong id="progress-label">0 / 96</strong></div>
+          <progress id="progress" max="96" value="0" aria-labelledby="progress-label"></progress>
+          <div class="legend"><span><i class="in-progress"></i> Commencé</span><span><i class="passed"></i> 2 exercices vérifiés</span></div>
+        </div>
+      </aside>
+      <section class="workbench" aria-label="Sujet et espace Python">
+        <div class="subjectbar panel">
+          <div class="subject-heading"><p class="kicker" id="subject-meta">SESSION 2025</p><h2 id="subject-heading">Chargement du catalogue…</h2></div>
+          <div class="mode-wrap"><strong id="timer" class="timer" hidden>60:00</strong><button id="simulation" class="quiet">Simulation · 1 h</button></div>
+        </div>
+        <div class="exercise-switch" aria-label="Exercice actif">
+          <button id="ex1" type="button" aria-pressed="true"><span>EXERCICE 1</span><strong id="title1"></strong></button>
+          <button id="ex2" type="button" aria-pressed="false"><span>EXERCICE 2</span><strong id="title2"></strong></button>
+        </div>
+        <div class="mobile-switch" aria-label="Affichage de l’atelier"><button id="show-statement" aria-pressed="true">Énoncé</button><button id="show-code" aria-pressed="false">Python et console</button></div>
+        <div id="split" class="split" data-mobile="statement">
+          <article class="panel statement" aria-labelledby="statement-heading">
+            <div class="card-head"><h3 id="statement-heading"><span class="doc-icon" aria-hidden="true"></span> Énoncé</h3><div class="button-row"><button id="zoom-paper" class="quiet compact" aria-pressed="false" aria-label="Agrandir ou réduire la page">+</button><button id="text-mode" class="quiet compact" aria-pressed="false">Texte</button><a id="pdf-link" class="quiet compact" target="_blank" rel="noopener">PDF</a></div></div>
+            <div class="paper-view" id="paper-view" tabindex="0" aria-label="Page de l’énoncé">
+              <img id="paper-image" alt="" hidden>
+              <pre id="paper-text" hidden></pre>
+            </div>
+            <div class="paper-foot"><button id="prev-page" class="quiet compact" aria-label="Page précédente">‹</button><span id="page-info" aria-live="polite"></span><button id="next-page" class="quiet compact" aria-label="Page suivante">›</button></div>
+          </article>
+          <section class="panel coding" aria-labelledby="editor-heading">
+            <div class="card-head"><h3 id="editor-heading"><span class="code-icon" aria-hidden="true">&lt;/&gt;</span> Éditeur Python</h3><div class="button-row"><a id="source-link" class="quiet compact" download>Source</a><button id="export" class="quiet compact" title="Télécharger votre code en fichier Python">Exporter .py</button></div></div>
+            <div class="editor-shell"><div id="editor"></div></div>
+            <div class="editor-actions">
+              <button id="run" class="primary" title="Ctrl ou ⌘ + Entrée"><span class="play" aria-hidden="true"></span> Exécuter</button>
+              <button id="check" class="secondary">Vérifier</button>
+              <button id="stop" class="quiet" hidden>Arrêter</button>
+              <button id="reset" class="quiet compact reset">Réinitialiser</button>
+            </div>
+            <div class="console">
+              <div class="console-head"><h4>Console</h4><button id="clear-output" class="quiet compact">Effacer</button></div>
+              <div id="feedback" aria-live="polite"></div>
+              <pre id="output" tabindex="0" aria-label="Sortie Python">La sortie de votre programme s’affichera ici.</pre>
+            </div>
+            <details class="stdin"><summary>Valeurs pour input()</summary><label for="stdin">Saisissez une valeur par ligne, dans l’ordre des appels.</label><textarea id="stdin" rows="3" spellcheck="false"></textarea></details>
+            <div class="editor-foot"><span><i class="runtime-dot" id="runtime-dot"></i> <span id="runtime-label" role="status">Python dans ce navigateur</span></span><span id="saved" role="status">Brouillon local</span></div>
+          </section>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">Épreuve pratique · Session 2025 <span>Les brouillons restent dans ce navigateur. Exportez vos fichiers pour les conserver.</span></footer>
+  </main>
+  <dialog id="dialog">
+    <form method="dialog">
+      <h2 id="dialog-title"></h2>
+      <div id="dialog-body"></div>
+      <div class="dialog-actions"><button value="cancel" id="dialog-cancel" class="quiet">Fermer</button><button value="ok" id="dialog-confirm" class="primary" hidden>Confirmer</button></div>
+    </form>
+  </dialog>
+  <noscript>L’atelier requiert JavaScript pour démarrer le moteur Python.</noscript>
+  <script>
+    if (location.protocol === 'file:') {
+      const notice = document.getElementById('boot-error');
+      notice.textContent = 'Pour ouvrir l’atelier, utilisez le lanceur Windows ou la commande indiquée dans LISEZ-MOI.md.';
+      notice.hidden = false;
+    }
+  </script>
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

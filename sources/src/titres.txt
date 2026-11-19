@@ -1,0 +1,48 @@
+Graphes;Voisins entrants d’un sommet;Suite de Conway
+Listes;Maximum et indices;Points de rupture
+Suites;Suite de Fibonacci;Élèves du mois
+Numération;Écriture binaire;Tri à bulles
+Chaînes;Renverser une chaîne;Crible d’Ératosthène
+Suites;Puissances successives;Codes parfaits
+Dictionnaires;Occurrences de caractères;Fusion de listes triées
+Listes;Maximum d’un tableau;Bon parenthésage
+Calcul;Multiplication par additions;Recherche dichotomique
+Recherche;Recherche dans une liste;Chiffrement de César
+Arbres;Parcours en largeur;Somme maximale
+Tris;Fusion de listes triées;Nombres romains
+Recherche;Recherche d’un indice;Insertion dans une liste triée
+Images;Lancers de dés;Négatif et seuillage
+Recherche;Multiplication par additions;Dichotomie récursive
+Calcul;Moyenne pondérée;Triangle de Pascal
+Arbres;Taille et hauteur d’un arbre;Insertion à un indice
+Calcul;Moyenne d’un tableau;Recherche dichotomique
+Listes;Indice du minimum;Séparation des 0 et des 1
+Objets;Minimum et maximum;Paquet de cartes
+Piles;Indices du maximum;Pile d’entiers positifs
+Objets;Dernière occurrence;Adresses IPv4
+Numération;Effectifs et tri des notes;Conversions binaires
+Arbres;Énumération;Insertion dans un arbre
+Chaînes;Température minimale;Palindromes
+Dictionnaires;Addition de dictionnaires;Jeu sur un plateau
+Dictionnaires;Ordre croissant;Dépouillement d’un scrutin
+Listes;Détection de doublons;Grille de démineur
+Dictionnaires;Sélection dans une table;Recherche d’un intrus
+Arbres;Encodage par différences;Arbre d’expression
+Graphes;Recherche de motif;Sommets accessibles
+Calcul;Occurrences d’un caractère;Rendu glouton
+Arbres;Insertion dans un arbre;Empaquetage
+Tris;Tri par sélection;Jeu du plus ou moins
+Piles;Maximum d’un dictionnaire;Expression postfixée
+Arbres;Nombre de mots;Arbre binaire de recherche
+Tris;Booléens et écriture binaire;Tri par insertion
+Numération;Moyenne de flottants;Écriture binaire
+Tris;Moyenne d’une liste;Tri de 0 et de 1
+Dictionnaires;Indices par comparaison;Moyenne d’un élève
+Objets;Ou exclusif;Carré semi-magique
+Numération;Nombre d’occurrences;Écriture binaire récursive
+Graphes;Couples de valeurs consécutives;Coloration d’une composante
+Images;Moyenne pondérée;Agrandissement d’une grille
+Dictionnaires;Mot et caractères jokers;Permutation cyclique
+Calcul;Comptage d’occurrences;Rendu de monnaie
+Arbres;Taille d’un arbre binaire;Tri par sélection
+Listes;Dernière occurrence;Point le plus proche
